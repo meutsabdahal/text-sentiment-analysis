@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle as pkl
+import joblib
 import re
 from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
@@ -8,11 +8,8 @@ from nltk.corpus import stopwords
 
 
 # load model and vectorizer
-with open('svm.pkl', 'rb') as model_file: 
-    model = pkl.load(model_file)
-    
-with open('tfidf_vectorizer.pkl', 'rb') as vec_file:
-    vectorizer = pkl.load(vec_file)
+model = joblib.load('svm.pkl')
+vectorizer = joblib.load('tfidf_vectorizer.pkl')
 
 
 st.title('Text Sentiment Analysis')
