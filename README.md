@@ -20,10 +20,13 @@ Firstly, I removed the unwanted columns like text_id and selected_text. The NaN 
 ### Exploratory Data Analysis (EDA)
 Some major visualization from the data is performed like most frequent words, word frequencies with respect to sentiment, wordcloud. 
 
+**Top Frequent Words**
 ![alt text](charts/top_frequent_words.png)
 
+**Top Frequent Words According to Sentiment**
 ![alt text](charts/word_frequency_by_sentiment.png)
 
+**WordCloud**
 ![alt text](charts/wordcloud.png)
 
 ### Train Test Split
@@ -40,8 +43,10 @@ Multiple algorithms like Logistic Regression, Naive Bayes, Support Vector Machin
 ### Model Evaluation
 All the trained algorithms are evaluated using classification report, confusion matrix and AUC-ROC score. After evaluation of all the algorithms, SVM is chosen for deployment and hypermeter tuning because it provides slightly better metrics than others. Furthermore, SVM works well with textual data and there are fewer hyperparameters to tune.
 
+**Confusion Matrix**
 ![alt text](charts/confusion_matrix.png)
 
+**Confusion Matrix after Optimization**
 ![alt text](charts/confusion_matrix_hyperparameter.png)
 
 ### Hyperparameter Tuning 
