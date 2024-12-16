@@ -15,12 +15,17 @@ There are various processes involved in this project:
 Data is about the tweets of people on twitter. The data is in csv format and consists of 4 columns (text_id, text, selected_text, sentiment) and 27500 rows. The data is labelled based on the tweets made by the people on twitter and labelled as Negative, Neutral and Positive. The data is available on the Kaggle. The link to the data: https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset 
 
 ### Data Preprocessing
-Firstly, I removed the unwanted columns like text_id and selected_text. The NaN values from the dataset are removed and all the data is converted into lower case. The data is from twitter and it consists of user mentions, links, hashtags, numbers and special characters. This has no effects on the user's sentiments. So, it is removed using regular expressions. The data free of NaN values,  user mentions, links, hashtags, numbers and special characters is tokenized and stored in a new column named as token. Tokenization breaks the text into smaller parts and helps the machine understand the human languages. In case the user data is converted into individual words. Lemmatization is performed in tokenized data. Lemmatization converts the words to their base form. It helps to improve the accuracy of text processing. After lemmatization, stopwords from English are removed. Stopwords removes the most common English words like the, a, is etc. This allows the machine to focus on the important words responsible for human sentiment.
+1. Removed the unwanted columns like text_id and selected_text.
+2. The NaN values from the dataset are removed and all the data is converted into lower case.
+3. User mentions, links, hashtags, numbers and special characters are removed using regular expressions.
+4. Tokenization is performed
+5. Lemmatization is performed
+6. Stopwords are removed
 
 ### Exploratory Data Analysis (EDA)
 Some major visualization from the data is performed like most frequent words, word frequencies with respect to sentiment, wordcloud. 
 
-**Top Frequent Words**
+**Top Frequent Words**<br>
 ![alt text](charts/top_frequent_words.png)
 
 **Top Frequent Words According to Sentiment**
@@ -43,7 +48,7 @@ Multiple algorithms like Logistic Regression, Naive Bayes, Support Vector Machin
 ### Model Evaluation
 All the trained algorithms are evaluated using classification report, confusion matrix and AUC-ROC score. After evaluation of all the algorithms, SVM is chosen for deployment and hypermeter tuning because it provides slightly better metrics than others. Furthermore, SVM works well with textual data and there are fewer hyperparameters to tune.
 
-**Confusion Matrix**
+**Confusion Matrix**<br>
 ![alt text](charts/confusion_matrix.png)
 
 **Confusion Matrix after Optimization**
