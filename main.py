@@ -6,17 +6,12 @@ from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
 import spacy
 from nltk.corpus import stopwords
+from spacy import cli
 
 
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
-
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+cli.download("en_core_web_sm")
+nltk.download('punkt')
+nltk.download('stopwords')
 
 
 
