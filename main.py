@@ -8,8 +8,15 @@ import spacy
 from nltk.corpus import stopwords
 
 
-nltk.download('punkt')
-nltk.download('stpwords')
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 
 
