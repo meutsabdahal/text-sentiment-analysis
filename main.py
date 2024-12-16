@@ -37,7 +37,7 @@ if st.button('Analyze!'):
         token = word_tokenize(text)
                 
         # lemmitization
-        nlp = spacy.load('en_core_web_sm')
+        nlp = spacy.load('en_core_web_sm/en_core_web_sm-3.8.0')
         doc = nlp(text) 
         token = [token.lemma_ for token in doc]
 
