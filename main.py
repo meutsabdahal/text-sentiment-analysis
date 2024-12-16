@@ -8,6 +8,11 @@ import spacy
 from nltk.corpus import stopwords
 
 
+nltk.download('punkt')
+nltk.download('stpwords')
+
+
+
 # load model and vectorizer
 model = joblib.load('svm_model.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
@@ -28,7 +33,7 @@ if st.button('Analyze!'):
         #remove urls, user mentions, hashtags, numbers and special character
         text = re.sub(r'https?://\S+|@\w+|#|\d|[^\w\s]', '', text) 
         
-        nltk.download('punkt')
+       
         # tokenization
         token = word_tokenize(text)
                 
