@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import re
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
 import spacy
@@ -27,6 +28,7 @@ if st.button('Analyze!'):
         #remove urls, user mentions, hashtags, numbers and special character
         text = re.sub(r'https?://\S+|@\w+|#|\d|[^\w\s]', '', text) 
         
+        nltk.download('punkt')
         # tokenization
         token = word_tokenize(text)
                 
@@ -42,7 +44,6 @@ if st.button('Analyze!'):
         # Convert back to text for vectorization
         processed_text = ' '.join(token)
         
-        print(type(vectorizer))
 
         # Vectorize the text
         text_vectorized = vectorizer.transform([processed_text])
