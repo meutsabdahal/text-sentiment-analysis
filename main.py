@@ -8,7 +8,7 @@ import spacy
 from nltk.corpus import stopwords
 from spacy import cli
 
-
+cli.download("en_core_web_sm")
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
