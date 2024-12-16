@@ -9,6 +9,9 @@ from nltk.corpus import stopwords
 from spacy import cli
 
 
+import sklearn
+print(f"scikit-learn version: {sklearn.__version__}")
+
 nltk.download('punkt')
 nltk.download('stopwords')
 
