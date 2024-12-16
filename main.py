@@ -9,10 +9,8 @@ from nltk.corpus import stopwords
 from spacy import cli
 
 
-cli.download("en_core_web_sm")
 nltk.download('punkt')
 nltk.download('stopwords')
-
 
 
 # load model and vectorizer
