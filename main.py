@@ -9,12 +9,8 @@ from nltk.corpus import stopwords
 from spacy import cli
 
 
-import sklearn
-print(f"scikit-learn version: {sklearn.__version__}")
-
-nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
-
 
 # load model and vectorizer
 model = joblib.load('svm_model.pkl')
